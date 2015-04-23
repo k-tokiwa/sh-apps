@@ -33,7 +33,7 @@
       ignore_errors: true
     - name: open port (firewalld)
       notify: reload firewalld
-      firewalld: zone=public service=http state=enabled permanent=false
+      firewalld: zone=public service=http state=enabled permanent=true
       when: firewalld_result.stdout == "active"
   handlers:
     - name: reload firewalld
