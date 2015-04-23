@@ -16,19 +16,13 @@ RUN chmod 0440 /etc/sudoers.d/01_docker
 RUN echo 'Defaults !requiretty' >> /etc/sudoers.d/01_docker
 
 RUN yum install -y make gcc readline-devel zlib-devel nmap
-
-#RUN wget "http://iij.dl.sourceforge.jp/aipo/60038/aipo7020aja_linux64.tar.gz" -O ~/tmp/aipo7020aja_linux64.tar.gz
-#RUN mkdir --verbose --parents ~/tmp/aipo_01
-#RUN tar -xvzf ~/tmp/aipo7020aja_linux64.tar.gz -C ~/tmp/aipo_01
-#RUN tar -xvzf ~/tmp/aipo_01/aipo7020aja_linux/aipo7020.tar.gz -C /opt/
-
-RUN wget "http://iij.dl.sourceforge.jp/aipo/63098/aipo-8.0-linux-x64.tar.gz" -O ~/tmp/aipo-8.0-linux-x64.tar.gz
-RUN tar -xvzf ~/tmp/aipo-8.0-linux-x64.tar.gz -C /opt/
-RUN mv /opt/aipo-8.0-linux-x64 /opt/aipo --verbose
-
 RUN yum install -y lsof unzip
 
-RUN bash /opt/aipo/installer.sh
+RUN wget "http://iij.dl.sourceforge.jp/aipo/63098/aipo-8.0-linux-x64.tar.gz" -O ~/tmp/aipo-8.0-linux-x64.tar.gz
+RUN mkdir --verbose --parents ~/tmp/aipo_01
+RUN tar -xvzf ~/tmp/aipo-8.0-linux-x64.tar.gz -C ~/tmp/aipo_01
+
+RUN bash ~/tmp/aipo_01/aipo-8.0-linux-x64/installer.sh /usr/local/aipo
 RUN rm -rf ~/tmp/aipo01
 ADD src/cmd.sh /cmd.sh
 RUN chmod +x /cmd.sh
@@ -36,9 +30,7 @@ RUN chmod +x /cmd.sh
 RUN yum install -y rsync
 RUN yum install -y openssh-clients
 
-#VOLUME ["/opt/aipo/backup"]
 VOLUME ["/usr/local/aipo/backup"]
 EXPOSE 80
-#WORKDIR /opt/aipo
 WORKDIR /usr/local/aipo
 CMD /cmd.sh
