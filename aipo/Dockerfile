@@ -36,7 +36,8 @@ RUN chmod +x /cmd.sh
 RUN yum install -y rsync
 RUN yum install -y openssh-clients
 
-VOLUME ["/opt/aipo/backup"]
+#VOLUME ["/opt/aipo/backup"]
+VOLUME ["/usr/local/aipo/backup"]
 EXPOSE 80
 WORKDIR /opt/aipo
 CMD /cmd.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-pushd /opt/aipo
+pushd /usr/local/aipo
 
 pushd ./bin
 ./startup.sh
@@ -10,4 +10,4 @@ popd
 
 popd
 
-tail -f /opt/aipo/tomcat/logs/catalina.out
+tail -f /usr/local/aipo/tomcat/logs/catalina.out
