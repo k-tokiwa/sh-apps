@@ -7,7 +7,7 @@ RUN apt-get install -y dnsmasq
 RUN apt-get install -y supervisor
 
 RUN mkdir --verbose --parents /usr/local/nginx/conf.docker.d
-ADD src/conf.docker.d/* /usr/local/nginx/conf.docker.d/
+#ADD src/conf.docker.d/* /usr/local/nginx/conf.docker.d/
 
 ADD src/run.sh /opt/run.sh
 ADD src/supervisor.conf /etc/supervisor/conf.d/supervisord.conf
