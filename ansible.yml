@@ -27,8 +27,6 @@
         - wget
         - python-setuptools
         - python-pip
-    - name: install requirements.txt
-      pip: requirements=./requirements.txt
     - name: check port (firewalld)
       command: systemctl is-active firewalld
       register: firewalld_result
