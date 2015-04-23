@@ -50,6 +50,8 @@ creativeclub:
     WP_PASSWORD: password
     WP_EMAIL: example@example.com
     WP_LOCALE: ja
+    WP_ALLOW_MULTISITE: 1
+    WP_MULTISITE_SUBDOMAINS: 1
   volumes:
     - ./volumes/creative-club:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
