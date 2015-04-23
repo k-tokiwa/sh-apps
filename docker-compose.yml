@@ -6,9 +6,10 @@ nginx:
     - owncloud:owncloud
   ports:
     - 80:80
+  restart: always
+  privileged: true
   volumes:
     - ./_nginx/volumes/docker.conf.d:/usr/local/nginx/conf.docker.d
-  restart: always
 
 aipo:
   hostname: aipo
