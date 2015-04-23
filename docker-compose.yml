@@ -4,6 +4,8 @@ nginx:
   links:
     - aipo:aipo
     - owncloud:owncloud
+    - blog:blog
+    - creativeclub:creativeclub
   ports:
     - 80:80
   restart: always
@@ -37,8 +39,8 @@ blog:
     - ./volumes/blog:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
 
-creative-club:
-  hostname: creative-club
+creativeclub:
+  hostname: creativeclub
   build: ./dcww/
   privileged: true
   environment:
