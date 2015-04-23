@@ -1,0 +1,21 @@
+nginx:
+  hostname: nginx
+  build: ./_nginx/
+  links:
+    - aipo:aipo
+    - owncloud:owncloud
+  ports:
+    - 80:80
+  volumes:
+    - ./_nginx/volumes/docker.conf.d:/usr/local/nginx/conf.docker.d
+
+aipo:
+  hostname: aipo
+  build: ./aipo/
+  privileged: true
+  volumes:
+    - ./volumes/aipo/backup:/opt/aipo/backup
+
+owncloud:
+  hostname: owncloud
+  image: jchaney/owncloud
