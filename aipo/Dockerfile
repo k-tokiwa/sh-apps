@@ -23,9 +23,8 @@ RUN yum install -y make gcc readline-devel zlib-devel nmap
 #RUN tar -xvzf ~/tmp/aipo_01/aipo7020aja_linux/aipo7020.tar.gz -C /opt/
 
 RUN wget "http://iij.dl.sourceforge.jp/aipo/63098/aipo-8.0-linux-x64.tar.gz" -O ~/tmp/aipo-8.0-linux-x64.tar.gz
-RUN mkdir --verbose --parents ~/tmp/aipo_01
-RUN tar -xvzf ~/tmp/aipo-8.0-linux-x64.tar.gz -C ~/tmp/aipo_01
-RUN tar -xvzf ~/tmp/aipo_01/aipo-8.0-linux/aipo-8.0.tar.gz -C /opt/
+RUN tar -xvzf ~/tmp/aipo-8.0-linux-x64.tar.gz -C /opt/
+RUN mv /opt/aipo-8.0-linux-x64 /opt/aipo --verbose
 
 RUN bash /opt/aipo/bin/installer.sh
 RUN rm -rf ~/tmp/aipo01
