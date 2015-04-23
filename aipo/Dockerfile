@@ -26,6 +26,8 @@ RUN wget "http://iij.dl.sourceforge.jp/aipo/63098/aipo-8.0-linux-x64.tar.gz" -O 
 RUN tar -xvzf ~/tmp/aipo-8.0-linux-x64.tar.gz -C /opt/
 RUN mv /opt/aipo-8.0-linux-x64 /opt/aipo --verbose
 
+RUN yum install -y lsof unzip
+
 RUN bash /opt/aipo/installer.sh
 RUN rm -rf ~/tmp/aipo01
 ADD src/cmd.sh /cmd.sh
