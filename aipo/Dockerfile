@@ -39,5 +39,6 @@ RUN yum install -y openssh-clients
 #VOLUME ["/opt/aipo/backup"]
 VOLUME ["/usr/local/aipo/backup"]
 EXPOSE 80
-WORKDIR /opt/aipo
+#WORKDIR /opt/aipo
+WORKDIR /usr/local/aipo
 CMD /cmd.sh
