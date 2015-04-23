@@ -8,6 +8,7 @@ nginx:
     - 80:80
   volumes:
     - ./_nginx/volumes/docker.conf.d:/usr/local/nginx/conf.docker.d
+  restart: always
 
 aipo:
   hostname: aipo
