@@ -3,9 +3,9 @@ nginx:
   build: ./_nginx/
   links:
     - aipo:aipo
-    - owncloud:owncloud
+    #- owncloud:owncloud
     - blog:blog
-    - creativeclub:creativeclub
+    #- creativeclub:creativeclub
   ports:
     - 80:80
   restart: always
@@ -20,9 +20,9 @@ aipo:
   volumes:
     - ./volumes/aipo/backup:/opt/aipo/backup
 
-owncloud:
-  hostname: owncloud
-  image: jchaney/owncloud
+#owncloud:
+#  hostname: owncloud
+#  image: jchaney/owncloud
 
 blog:
   hostname: blog
@@ -30,7 +30,7 @@ blog:
   privileged: true
   environment:
     WP_URL: blog.affikas.comugi.co
-    WP_TITLE: DCWW_(blog.affikas.comugi.co)
+    WP_TITLE: Hachioji_Blog
     WP_USER: root
     WP_PASSWORD: password
     WP_EMAIL: example@example.com
@@ -40,19 +40,19 @@ blog:
     - ./volumes/blog:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
 
-creativeclub:
-  hostname: creativeclub
-  build: ./dcww/
-  privileged: true
-  environment:
-    WP_URL: cc.affikas.comugi.co
-    WP_TITLE: DCWW_(cc.affikas.comugi.co)
-    WP_USER: root
-    WP_PASSWORD: password
-    WP_EMAIL: example@example.com
-    WP_VERSION: 4.1.2
-    WP_LOCALE: ja
-    WP_ALLOW_MULTISITE: 1
-  volumes:
-    - ./volumes/creative-club:/var/www/html
-    - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
+#creativeclub:
+#  hostname: creativeclub
+#  build: ./dcww/
+#  privileged: true
+#  environment:
+#    WP_URL: cc.affikas.comugi.co
+#    WP_TITLE: DCWW_(cc.affikas.comugi.co)
+#    WP_USER: root
+#    WP_PASSWORD: password
+#    WP_EMAIL: example@example.com
+#    WP_VERSION: 4.1.2
+#    WP_LOCALE: ja
+#    WP_ALLOW_MULTISITE: 1
+#  volumes:
+#    - ./volumes/creative-club:/var/www/html
+#    - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
