@@ -53,7 +53,7 @@ creativeclub:
     WP_VERSION: 4.1.2
     WP_LOCALE: ja
     WP_ALLOW_MULTISITE: 1
-    WP_MULTISITE_SUBDOMAINS: 1
+    WP_MULTISITE_SUBDOMAINS: 0
   volumes:
     - ./volumes/creative-club:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
