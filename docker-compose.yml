@@ -29,7 +29,7 @@ blog:
   build: ./dcww/
   privileged: true
   environment:
-    WP_URL: blog.affikas.comugi.co
+    WP_URL: blog.hachi.sraft.org
     WP_TITLE: Hachioji_Blog
     WP_USER: root
     WP_PASSWORD: password
@@ -39,6 +39,7 @@ blog:
   volumes:
     - ./volumes/blog:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
+    - ./volumes/wordpress-scripts:/opt/wordpress
 
 #creativeclub:
 #  hostname: creativeclub
