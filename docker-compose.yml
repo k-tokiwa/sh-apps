@@ -34,6 +34,7 @@ blog:
     WP_USER: root
     WP_PASSWORD: password
     WP_EMAIL: example@example.com
+    WP_VERSION: 4.1.2
     WP_LOCALE: ja
   volumes:
     - ./volumes/blog:/var/www/html
@@ -49,6 +50,7 @@ creativeclub:
     WP_USER: root
     WP_PASSWORD: password
     WP_EMAIL: example@example.com
+    WP_VERSION: 4.1.2
     WP_LOCALE: ja
     WP_ALLOW_MULTISITE: 1
     WP_MULTISITE_SUBDOMAINS: 1
