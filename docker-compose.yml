@@ -36,6 +36,7 @@ blog:
     WP_EMAIL: example@example.com
     WP_VERSION: 4.1.2
     WP_LOCALE: ja
+    WP_ALLOW_MULTISITE: 1
   volumes:
     - ./volumes/blog:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
