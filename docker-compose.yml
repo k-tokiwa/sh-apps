@@ -42,11 +42,6 @@ blog:
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
     - ./volumes/wordpress-scripts:/opt/wordpress
 
-# TODO:
-## nginx.conf || user root root;
-## php-fpm.d/www.conf || user = root
-## php-fpm.d/www.conf || group = root
-
 #creativeclub:
 #  hostname: creativeclub
 #  build: ./dcww/
