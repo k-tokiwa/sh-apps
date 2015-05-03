@@ -1,5 +1,9 @@
 #!/bin/bash
 
+wp plugin activate error-log-monitor --network
+wp plugin activate theme-check --network
+wp plugin activate jetpack --network
+
 wp plugin install google-sitemap-generator
 wp plugin install pushpress
 wp plugin install wpmandrill --activate-network
