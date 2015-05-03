@@ -32,29 +32,12 @@ blog:
     WP_URL: blog.hachi.sraft.org
     WP_TITLE: Hachioji_Blog
     WP_USER: root
-    WP_PASSWORD: password
+    WP_PASSWORD: change_me_first
     WP_EMAIL: example@example.com
-    WP_VERSION: 4.1.2
+    WP_VERSION: 4.2.1
     WP_LOCALE: ja
     WP_ALLOW_MULTISITE: 1
   volumes:
     - ./volumes/blog:/var/www/html
     - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
     - ./volumes/wordpress-scripts:/opt/wordpress
-
-#creativeclub:
-#  hostname: creativeclub
-#  build: ./dcww/
-#  privileged: true
-#  environment:
-#    WP_URL: cc.affikas.comugi.co
-#    WP_TITLE: DCWW_(cc.affikas.comugi.co)
-#    WP_USER: root
-#    WP_PASSWORD: password
-#    WP_EMAIL: example@example.com
-#    WP_VERSION: 4.1.2
-#    WP_LOCALE: ja
-#    WP_ALLOW_MULTISITE: 1
-#  volumes:
-#    - ./volumes/creative-club:/var/www/html
-#    - ./dcww/volumes/nginx_conf.d:/etc/nginx/conf.d
